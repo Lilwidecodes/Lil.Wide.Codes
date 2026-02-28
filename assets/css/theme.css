@@ -1,0 +1,103 @@
+/* THEME CSS - Lil.Wide.Codes V1 | Purpose: Dark & focused brand mood */
+
+/* BACKGROUNDS */
+body {
+    background-color: var(--color-bg);
+}
+
+section {
+    background-color: transparent;
+}
+
+.site-header,
+.site-footer {
+    background-color: var(--color-bg);
+}
+
+/* BRAND */
+.brand a {
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+/* Nav Bar Presence */
+.site-header {
+    background-color: var(--color-bg);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav {
+    min-height: 64px;
+}
+
+.nav-links a {
+    padding: 0.4rem 0.6rem;
+    border-radius: 4px;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+/* NAV LINKS */
+.nav-links a {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+}
+
+.nav-links a:hover {
+    color: var(--color-text-primary);
+}
+
+/* HERO */
+.hero h1 {
+    color: var(--color-text-primary);
+}
+
+.hero-subtext {
+    color: var(--color-text-secondary);
+}
+
+/* CARDS / SURFACES */
+
+.focus-card {
+    background-color: var(--color-surface);
+    padding: var(--space-md);
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.04);   
+}
+
+/* LINKS */
+.text-link {
+    position: relative;
+}
+
+.text-link::after {
+    content: "➡️";
+    margin-left: 0.4rem;
+    transition: transform 0.2s ease;
+}
+
+.text-link:hover::after {
+    transform: translateX(4px);
+}
+
+/* SOCIAL LINKS */
+.social-links a {
+    padding: 0.4rem 0.6rem;
+    border-radius: 4px;
+    background-color: var(--color-surface);
+    font-size: 0.85rem;
+}
+
+.social-links a:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* FOOTER */
+.site-footer p {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+}
