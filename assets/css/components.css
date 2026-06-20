@@ -296,3 +296,48 @@ a:hover {
   background-color: var(--color-accent);
   z-index: 999;
 }
+
+/* CTA BUTTON */
+
+.cta-button {
+  margin-top: 2rem;
+  display: inline-flex;
+  gap: 1rem;
+  background-color: var(--color-bg);
+  width: fit-content;
+  border: none;
+}
+
+.cta-button a {
+  background-color: var(--color-accent);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.cta-button a:hover {
+  background-color: #e64a19;
+  transform: translateY(-2px);
+}
+
+/* active effect (when clicked) */
+.cta-button a:active {
+  transform: translateY(0);
+}
+
+/* container */
+
+.container p {
+  margin: 1.5rem;
+}
+
+.container h2 {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
