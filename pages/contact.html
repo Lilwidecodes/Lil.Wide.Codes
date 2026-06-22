@@ -6,7 +6,7 @@
     <title>Contact - Lil.Wide.Codes</title>
     <meta
       name="description"
-      content="Contact Lil.Wide.Codes for collaboration, ideas, and serious work."
+      content="Contact Lil.Wide.Codes for collaboration, serious inquiries, and software development ideas."
     />
     <link rel="stylesheet" href="../assets/css/base.css" />
     <link rel="stylesheet" href="../assets/css/layout.css" />
@@ -14,45 +14,139 @@
     <link rel="stylesheet" href="../assets/css/theme.css" />
   </head>
   <body>
+    <!-- Scroll Progress Bar -->
+    <div class="progress-bar"></div>
+
+    <!-- Header -->
     <header class="site-header">
       <nav class="nav container">
         <div class="brand">
-          <a href="../index.html">Lil.Wide.Codes</a>
+          <a href="../index.html">
+            <span class="brand-dot"></span>
+            Lil.Wide.Codes
+          </a>
         </div>
-        <button class="menu-toggle" aria-label="Toggle menu">🟰</button>
         <ul class="nav-links">
           <li><a href="about.html">About</a></li>
           <li><a href="projects.html">Projects</a></li>
-          <li><a href="learn.html">Learn</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="learn.html">Journal</a></li>
           <li><a href="roadmap.html">Roadmap</a></li>
         </ul>
+        <div class="nav-actions">
+          <button class="menu-toggle" aria-label="toggle menu">🟰</button>
+        </div>
       </nav>
     </header>
-    <main>
-      <section class="container">
-        <h1>Contact</h1>
-        <p>For meaningful collaboration, systems, or ideas worth building.</p>
-      </section>
-      <section class="container">
-        <div class="card">
-          <h3>Email</h3>
-          <p>
-            <a href="mailto:lilwidez@gmail.com">lil.wide.codes@gmail.com</a>
-          </p>
+
+    <!-- Fullscreen Menu Overlay -->
+    <div class="nav-overlay">
+      <div class="nav-overlay-content">
+        <div class="overlay-group">
+          <h3>Platform</h3>
+          <ul>
+            <li><a href="products.html">Product Releases</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+            <li><a href="documentation.html">Documentation</a></li>
+          </ul>
         </div>
-        <div class="card muted">
-          <h3>Note</h3>
-          <p>No spam. No shortcuts. Only long-term thinking.</p>
+        <div class="overlay-group">
+          <h3>Engineering</h3>
+          <ul>
+            <li><a href="projects.html">Project Showcase</a></li>
+            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="roadmap.html">Roadmap</a></li>
+          </ul>
+        </div>
+        <div class="overlay-group">
+          <h3>Philosophy</h3>
+          <ul>
+            <li><a href="learn.html">Journal / Learn</a></li>
+            <li><a href="about.html">About Brand</a></li>
+            <li><a href="vision.html">Vision Plan</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Page Hero -->
+      <section class="container reveal-on-scroll">
+        <h1 data-scramble>Connect With Us</h1>
+        <p>
+          For meaningful collaboration, software builds, or engineering inquiries. 
+          Fill out the connection form below or email us directly.
+        </p>
+      </section>
+
+      <!-- Contact Layout -->
+      <section class="container">
+        <div class="grid-2">
+          
+          <!-- Contact Form -->
+          <div class="card interactive-glow reveal-on-scroll">
+            <div class="card-content">
+              <form id="contact-form" onsubmit="event.preventDefault(); alert('Message logged in local stream. Thank you!'); this.reset();">
+                <div class="form-group">
+                  <label for="form-name" class="form-label">Name / Company</label>
+                  <input type="text" id="form-name" class="form-input" placeholder="e.g. Salim Matovu" required />
+                </div>
+                <div class="form-group">
+                  <label for="form-email" class="form-label">Email Address</label>
+                  <input type="email" id="form-email" class="form-input" placeholder="e.g. name@company.com" required />
+                </div>
+                <div class="form-group">
+                  <label for="form-message" class="form-label">System Requirement / Inquiry</label>
+                  <textarea id="form-message" class="form-textarea" placeholder="Describe the system build, parameters, and timeline..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Transmit Message</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Contact Details / Info -->
+          <div class="flex-column" style="display: flex; gap: var(--space-md);">
+            
+            <div class="card interactive-glow reveal-on-scroll">
+              <div class="card-content">
+                <h3>Direct Stream</h3>
+                <p>Email for general parameters, business details, or partnership frameworks:</p>
+                <a href="mailto:lil.wide.codes@gmail.com" class="text-link" style="font-size: var(--text-lg);">lil.wide.codes@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="card interactive-glow muted reveal-on-scroll">
+              <div class="card-content">
+                <h3>Connection Rule</h3>
+                <p style="margin-bottom: 0;">
+                  No spam. No shortcuts. Only honest projects, scalable ideas, and developers looking to create value.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
         </div>
       </section>
     </main>
+
+    <!-- Footer -->
     <footer class="site-footer">
-      <div class="container">
-        <p>&copy; 2026 Lil.Wide.Codes.</p>
+      <div class="container footer-content">
+        <div class="footer-logo">&copy; 2026 Lil.Wide.Codes</div>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="vision.html">Vision</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="roadmap.html">Roadmap</a></li>
+        </ul>
       </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="../assets/js/navigation.js"></script>
+    <script src="../assets/js/main.js"></script>
   </body>
 </html>

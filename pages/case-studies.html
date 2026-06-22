@@ -6,7 +6,7 @@
     <title>Case Studies - Lil.Wide.Codes</title>
     <meta
       name="description"
-      content="Case Studies and breakdowns of systems built by Lil.Wide.Codes."
+      content="Case Studies and architectural breakdowns of systems built by Lil.Wide.Codes."
     />
     <link rel="stylesheet" href="../assets/css/base.css" />
     <link rel="stylesheet" href="../assets/css/layout.css" />
@@ -14,88 +14,156 @@
     <link rel="stylesheet" href="../assets/css/theme.css" />
   </head>
   <body>
-    <!--header-->
+    <!-- Scroll Progress Bar -->
+    <div class="progress-bar"></div>
+
+    <!-- Header -->
     <header class="site-header">
       <nav class="nav container">
         <div class="brand">
-          <a href="../index.html">Lil.Wide.Codes</a>
+          <a href="../index.html">
+            <span class="brand-dot"></span>
+            Lil.Wide.Codes
+          </a>
         </div>
-        <button class="menu-toggle" aria-label="toggle menu">🟰</button>
         <ul class="nav-links">
           <li><a href="about.html">About</a></li>
           <li><a href="projects.html">Projects</a></li>
-          <li><a href="learn.html">Learn</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="learn.html">Journal</a></li>
           <li><a href="roadmap.html">Roadmap</a></li>
         </ul>
+        <div class="nav-actions">
+          <button class="menu-toggle" aria-label="toggle menu">🟰</button>
+        </div>
       </nav>
     </header>
+
+    <!-- Fullscreen Menu Overlay -->
+    <div class="nav-overlay">
+      <div class="nav-overlay-content">
+        <div class="overlay-group">
+          <h3>Platform</h3>
+          <ul>
+            <li><a href="products.html">Product Releases</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+            <li><a href="documentation.html">Documentation</a></li>
+          </ul>
+        </div>
+        <div class="overlay-group">
+          <h3>Engineering</h3>
+          <ul>
+            <li><a href="projects.html">Project Showcase</a></li>
+            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="roadmap.html">Roadmap</a></li>
+          </ul>
+        </div>
+        <div class="overlay-group">
+          <h3>Philosophy</h3>
+          <ul>
+            <li><a href="learn.html">Journal / Learn</a></li>
+            <li><a href="about.html">About Brand</a></li>
+            <li><a href="vision.html">Vision Plan</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
     <main>
-      <section class="container">
-        <h1>Case Studies</h1>
+      <!-- Page Hero -->
+      <section class="container reveal-on-scroll">
+        <h1 data-scramble>Engineering Case Studies</h1>
         <p>
-          Detailed breakdowns of real systems - decisions, structure, and
-          trade-offs.
+          Deep technical breakdowns of real systems we have designed, tested, and shipped. 
+          Each study outlines objective parameters, technology layers, architectural challenges, and final outcomes.
         </p>
       </section>
 
-      <section class="contianer case-grid">
-        <!--Case Study-->
-        <article class="case-card">
-          <header class="case-header">
-            <h3>Lil.Wide.Codes</h3>
-            <span class="case-status">Active</span>
-          </header>
-          <p class="case-summary">
-            Building a brand-driven technical website with scalable architecture
-            using pure web fundamentals.
-          </p>
-          <details>
-            <summary>View breakdown</summary>
-            <div class="case-body">
-              <h4>Objective</h4>
-              <p>
-                Create a professional technical presence focused on clarity,
-                long-term scalability, and system thinking.
-              </p>
-              <h4>Tech Stack</h4>
-              <ul>
-                <li>HTML (semantic structure)</li>
-                <li>CSS (modular architecture)</li>
-                <li>JavaScript (navigation & interaction)</li>
-              </ul>
-              <h4>Key decisions</h4>
-              <ul>
-                <il>No frameworks for full control</il>
-                <il>Dark brand-driven UI</il>
-                <il>Mobile-first responsive layout</il>
-              </ul>
-              <h4>Current State</h4>
-              <p>
-                Foundation complete. Iterating on UI depth and content systems.
-              </p>
-            </div>
-          </details>
+      <!-- Case Studies List -->
+      <section class="container case-grid">
+        
+        <!-- Case Study 1: Lil.Wide.Codes Hub -->
+        <article class="case-card interactive-glow reveal-on-scroll">
+          <div class="card-content">
+            <header class="case-header">
+              <h3>Lil.Wide.Codes Hub Redesign</h3>
+              <span class="status-badge completed">Deployed</span>
+            </header>
+            <p class="case-summary">
+              Overhauling our official brand headquarters to build a dark mode design system, 
+              adding unified site sections, and implementing high-performance Vanilla JS scripts.
+            </p>
+            <details>
+              <summary>Expand Technical Breakdown</summary>
+              <div class="case-body">
+                <h4>Objective</h4>
+                <p>
+                  Establish an interactive, low-latency brand presence demonstrating design capabilities 
+                  using web fundamentals (zero framework dependencies).
+                </p>
+                
+                <h4>Technology Stack</h4>
+                <ul>
+                  <li>Semantic HTML5 (Structure & Hierarchy)</li>
+                  <li>Modular CSS Layers (Base, Layout, Components, Theme)</li>
+                  <li>Vanilla JavaScript (State tracking, CLI terminal widget, Cursor glow coordinates)</li>
+                </ul>
+
+                <h4>Key Decisions & Architecture</h4>
+                <ul>
+                  <li>No Frameworks: Retain full system ownership and keep static bundle sizes under 150KB.</li>
+                  <li>Dual-Nav Overlay: Standard link highlights for desktop, transitioning to a full-screen categorical overlay for complex pathing.</li>
+                  <li>Spotlight Glow Cards: Dynamic coordinate calculation using cursor mousemove tracking for high-end micro-interactions.</li>
+                </ul>
+
+                <h4>Testing & Verification</h4>
+                <p>
+                  Validated layouts across desktop (Chrome, Safari, Firefox) and mobile resolutions. Checked console output for DOM binding errors.
+                </p>
+
+                <h4>Outcome</h4>
+                <p>
+                  Released Hub V2.0.0. Achieved excellent page-speed metrics, responsive fluid scaling, and a fully interactive terminal CLI widget that runs client-side.
+                </p>
+              </div>
+            </details>
+          </div>
         </article>
-        <!--Future Case-->
-        <article class="case-card muted">
-          <header class="case-header">
-            <h3>Future Systems</h3>
-            <span class="case-status">Planned</span>
-          </header>
-          <p class="case-summary">
-            Upcoming systems will be documented here once in active development
-          </p>
+
+        <!-- Future Case Study: GridCraft -->
+        <article class="case-card interactive-glow muted reveal-on-scroll">
+          <div class="card-content">
+            <header class="case-header">
+              <h3>GridCraft CSS Sandbox</h3>
+              <span class="status-badge active">In Progress</span>
+            </header>
+            <p class="case-summary">
+              Case study detailing the modular component structure and live state syncing algorithms for our visual CSS grid generator.
+            </p>
+            <p class="muted-text" style="font-size: var(--text-xs); margin-top: var(--space-sm);">Technical article releasing upon V2 tool launch.</p>
+          </div>
         </article>
+
       </section>
     </main>
 
+    <!-- Footer -->
     <footer class="site-footer">
-      <div class="container">
-        <p>&copy; 2026 Lil.Wide.Codes.</p>
+      <div class="container footer-content">
+        <div class="footer-logo">&copy; 2026 Lil.Wide.Codes</div>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="vision.html">Vision</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="roadmap.html">Roadmap</a></li>
+        </ul>
       </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="../assets/js/navigation.js"></script>
+    <script src="../assets/js/main.js"></script>
   </body>
 </html>

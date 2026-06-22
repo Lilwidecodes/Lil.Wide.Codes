@@ -6,71 +6,227 @@
     <title>Projects - Lil.Wide.Codes</title>
     <meta
       name="description"
-      content="Projects by Lil.Wide.Codes - real work, real systems."
+      content="Projects by Lil.Wide.Codes - real work, real systems, and software creations."
     />
     <link rel="stylesheet" href="../assets/css/base.css" />
     <link rel="stylesheet" href="../assets/css/layout.css" />
     <link rel="stylesheet" href="../assets/css/components.css" />
     <link rel="stylesheet" href="../assets/css/theme.css" />
+    <style>
+      /* Project specific filters styling */
+      .filters-container {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        margin-bottom: var(--space-lg);
+      }
+      .filter-btn {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--color-border);
+        color: var(--color-text-secondary);
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: var(--transition-fast);
+      }
+      .filter-btn:hover, .filter-btn.active {
+        background: var(--color-accent-blue);
+        color: #fff;
+        border-color: var(--color-accent-cyan);
+      }
+      .project-card {
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+    </style>
   </head>
   <body>
-    <!--header-->
+    <!-- Scroll Progress Bar -->
+    <div class="progress-bar"></div>
+
+    <!-- Header -->
     <header class="site-header">
       <nav class="nav container">
         <div class="brand">
-          <a href="../index.html">Lil.Wide.Codes</a>
+          <a href="../index.html">
+            <span class="brand-dot"></span>
+            Lil.Wide.Codes
+          </a>
         </div>
-        <button class="menu-toggle" aria-label="toggle menu">🟰</button>
         <ul class="nav-links">
           <li><a href="about.html">About</a></li>
           <li><a href="projects.html">Projects</a></li>
-          <li><a href="learn.html">Learn</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="learn.html">Journal</a></li>
           <li><a href="roadmap.html">Roadmap</a></li>
         </ul>
+        <div class="nav-actions">
+          <button class="menu-toggle" aria-label="toggle menu">🟰</button>
+        </div>
       </nav>
     </header>
 
-    <!--main-->
+    <!-- Fullscreen Menu Overlay -->
+    <div class="nav-overlay">
+      <div class="nav-overlay-content">
+        <div class="overlay-group">
+          <h3>Platform</h3>
+          <ul>
+            <li><a href="products.html">Product Releases</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+            <li><a href="documentation.html">Documentation</a></li>
+          </ul>
+        </div>
+        <div class="overlay-group">
+          <h3>Engineering</h3>
+          <ul>
+            <li><a href="projects.html">Project Showcase</a></li>
+            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="roadmap.html">Roadmap</a></li>
+          </ul>
+        </div>
+        <div class="overlay-group">
+          <h3>Philosophy</h3>
+          <ul>
+            <li><a href="learn.html">Journal / Learn</a></li>
+            <li><a href="about.html">About Brand</a></li>
+            <li><a href="vision.html">Vision Plan</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
     <main>
-      <!--intro-->
-      <section class="container">
-        <h1>Projects</h1>
+      <!-- Page Hero -->
+      <section class="container reveal-on-scroll">
+        <h1 data-scramble>Project Showcase</h1>
         <p>
-          Systems built with focus on structure, clarity, and long-term
-          scalability.
+          A registry of web systems, standalone CLI tools, and automation experiments. 
+          Use the category filters below to examine specific development areas.
         </p>
       </section>
+
+      <!-- Category Filter Buttons -->
+      <section class="container reveal-on-scroll" style="padding-top: 0;">
+        <div class="filters-container">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="web">Web Systems</button>
+          <button class="filter-btn" data-filter="dev">Developer Tools</button>
+          <button class="filter-btn" data-filter="ai">AI Tools</button>
+        </div>
+      </section>
+
+      <!-- Projects Grid -->
       <section class="container project-grid">
-        <!--project grid-->
-        <article class="project-card">
-          <h3>Lil.Wide.Codes</h3>
-          <p>
-            Brand-driven technical website built using clean architecture and
-            modern UI principles.
-          </p>
-          <ul class="tech-stack">
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-          </ul>
-          <p class="status">Status: Active</p>
-          <a href="case-studies.html" class="text-link">View case study</a>
+        
+        <!-- Project 1: Lil.Wide.Codes Hub -->
+        <article class="project-card interactive-glow" data-type="web">
+          <div class="card-content">
+            <div class="flex-row">
+              <h3>Lil.Wide.Codes Hub</h3>
+              <span class="status-badge active">Active</span>
+            </div>
+            <p>
+              Our central web portal engineered for speed, clean structures, and ambient dark aesthetic styling.
+            </p>
+            <ul class="tech-stack">
+              <li>HTML5</li>
+              <li>CSS Variables</li>
+              <li>Vanilla JS</li>
+            </ul>
+            <div class="flex-row" style="margin-top: var(--space-md);">
+              <a href="case-studies.html" class="text-link">View case study</a>
+              <span class="muted-text" style="font-size: var(--text-xs)">V2.0.0</span>
+            </div>
+          </div>
         </article>
-        <!--Placeholder for future-->
-        <article class="project-card muted">
-          <h3>Upcoming Systems</h3>
-          <p>New systems and experiments will be documented here.</p>
+
+        <!-- Project 2: GridCraft Sandbox -->
+        <article class="project-card interactive-glow" data-type="dev">
+          <div class="card-content">
+            <div class="flex-row">
+              <h3>GridCraft CSS Sandbox</h3>
+              <span class="status-badge active">Active</span>
+            </div>
+            <p>
+              An interactive visual environment for designing responsive layouts and exporting modular layout CSS definitions.
+            </p>
+            <ul class="tech-stack">
+              <li>JavaScript</li>
+              <li>CSS Grid</li>
+              <li>Flexbox</li>
+            </ul>
+            <div class="flex-row" style="margin-top: var(--space-md);">
+              <a href="products.html" class="text-link">Check release</a>
+              <span class="muted-text" style="font-size: var(--text-xs)">V1.0.5</span>
+            </div>
+          </div>
         </article>
+
+        <!-- Project 3: BulkRenamer CLI -->
+        <article class="project-card interactive-glow muted" data-type="dev">
+          <div class="card-content">
+            <div class="flex-row">
+              <h3>BulkRenamer CLI Utility</h3>
+              <span class="status-badge planned">Planned</span>
+            </div>
+            <p>
+              A high-performance node-based command-line program engineered to parse and rename thousands of files recursively.
+            </p>
+            <ul class="tech-stack">
+              <li>NodeJS</li>
+              <li>FS module</li>
+              <li>CLI Shell</li>
+            </ul>
+            <div class="flex-row" style="margin-top: var(--space-md);">
+              <a href="products.html" class="text-link">View timeline</a>
+              <span class="muted-text" style="font-size: var(--text-xs)">V0.1.0</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4: Lil.Agent.Proxy -->
+        <article class="project-card interactive-glow muted" data-type="ai">
+          <div class="card-content">
+            <div class="flex-row">
+              <h3>Lil.Agent.Proxy</h3>
+              <span class="status-badge vision">Vision</span>
+            </div>
+            <p>
+              A local gateway enabling AI agents to read, write, and execute shell instructions safely through sandboxed streams.
+            </p>
+            <ul class="tech-stack">
+              <li>Python</li>
+              <li>AI Prompting</li>
+              <li>Terminal API</li>
+            </ul>
+            <div class="flex-row" style="margin-top: var(--space-md);">
+              <a href="roadmap.html" class="text-link">Explore roadmap</a>
+              <span class="muted-text" style="font-size: var(--text-xs)">V0.0.1</span>
+            </div>
+          </div>
+        </article>
+
       </section>
     </main>
 
-    <!--footer-->
+    <!-- Footer -->
     <footer class="site-footer">
-      <div class="container">
-        <p>&copy; 2026 Lil.Wide.Codes</p>
+      <div class="container footer-content">
+        <div class="footer-logo">&copy; 2026 Lil.Wide.Codes</div>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="vision.html">Vision</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="roadmap.html">Roadmap</a></li>
+        </ul>
       </div>
     </footer>
+
+    <!-- Scripts -->
     <script src="../assets/js/navigation.js"></script>
+    <script src="../assets/js/main.js"></script>
   </body>
 </html>

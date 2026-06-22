@@ -1,83 +1,161 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web Foundations - Lil.Wide.Codes</title>
-    <meta name="description" content="Core foundations of real-world web development and structure."/>
+    <meta
+      name="description"
+      content="Core foundations of real-world web development, semantic structures, and standards."
+    />
+    <link rel="stylesheet" href="../../assets/css/base.css" />
+    <link rel="stylesheet" href="../../assets/css/layout.css" />
+    <link rel="stylesheet" href="../../assets/css/components.css" />
+    <link rel="stylesheet" href="../../assets/css/theme.css" />
+  </head>
+  <body>
+    <!-- Scroll Progress Bar -->
+    <div class="progress-bar"></div>
 
-    <link rel="stylesheet" href="../../assets/css/base.css"/>
-    <link rel="stylesheet" href="../../assets/css/layout.css"/>
-    <link rel="stylesheet" href="../../assets/css/components.css"/>
-    <link rel="stylesheet" href="../../assets/css/theme.css"/>
-</head>
-
-<body>
-
+    <!-- Header -->
     <header class="site-header">
-        <nav class="nav container">
-            <div class="brand">
-                <a href="../../index.html">Lil.Wide.Codes</a>
-            </div>
-            <button class="menu-toggle">🟰</button>
-            <ul class="nav-links">
-                <li><a href="../projects.html">Projects</a></li>
-                <li><a href="../case-studies.html">Case Studies</a></li>
-                <li><a href="../learn.html">Learn</a></li>
-                <li><a href="../contact.html">Contact</a></li>
-                <li><a href="../roadmap.html">Roadmap</a></li>
-            </ul>
-        </nav>
+      <nav class="nav container">
+        <div class="brand">
+          <a href="../../index.html">
+            <span class="brand-dot"></span>
+            Lil.Wide.Codes
+          </a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../projects.html">Projects</a></li>
+          <li><a href="../case-studies.html">Case Studies</a></li>
+          <li><a href="../learn.html">Journal</a></li>
+          <li><a href="../roadmap.html">Roadmap</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="menu-toggle" aria-label="toggle menu">🟰</button>
+        </div>
+      </nav>
     </header>
 
+    <!-- Fullscreen Menu Overlay -->
+    <div class="nav-overlay">
+      <div class="nav-overlay-content">
+        <div class="overlay-group">
+          <h3>Platform</h3>
+          <ul>
+            <li><a href="../products.html">Product Releases</a></li>
+            <li><a href="../downloads.html">Downloads</a></li>
+            <li><a href="../documentation.html">Documentation</a></li>
+          </ul>
+        </div>
+        <div class="overlay-group">
+          <h3>Engineering</h3>
+          <ul>
+            <li><a href="../projects.html">Project Showcase</a></li>
+            <li><a href="../case-studies.html">Case Studies</a></li>
+            <li><a href="../roadmap.html">Roadmap</a></li>
+          </ul>
+        </div>
+        <div class="overlay-group">
+          <h3>Philosophy</h3>
+          <ul>
+            <li><a href="../learn.html">Journal / Learn</a></li>
+            <li><a href="../about.html">About Brand</a></li>
+            <li><a href="../vision.html">Vision Plan</a></li>
+            <li><a href="../contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
     <main>
+      <!-- Page Hero -->
+      <section class="container reveal-on-scroll">
+        <span class="status-badge completed" style="margin-bottom: var(--space-sm);">Core standard</span>
+        <h1 data-scramble>Web Foundations</h1>
+        <p>
+          We build systems using pure web fundamentals. This build log covers the core principles 
+          of semantic structuring, resource separation, and long-term project organization.
+        </p>
+      </section>
 
-        <!--intro-->
-        <section class="container">
-            <h1>Web Foundations</h1>
-            <p>
-                This section covers the real foundations of building websites - structure, responsibility, and long-term thinking.
-            </p>
-        </section>
+      <!-- Core content -->
+      <section class="container">
+        <div class="grid-2">
+          
+          <article class="card interactive-glow reveal-on-scroll">
+            <div class="card-content">
+              <h3>1. Semantic Structure</h3>
+              <p style="margin-bottom: 0;">
+                HTML tags define page meaning and hierarchy—not visuals. Using standard semantic tags 
+                like <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>, 
+                and <code>&lt;section&gt;</code> ensures accessibility, indexing clarity, and clean code mapping.
+              </p>
+            </div>
+          </article>
 
-        <section class="container">
-            <h2>Core principles</h2>
-            <ul>
-                <li>Structure before styling</li>
-                <li>Clarity over cleverness</li>
-                <li>Systems scale, hacks don't</li>
-            </ul>
-        </section>
+          <article class="card interactive-glow reveal-on-scroll">
+            <div class="card-content">
+              <h3>2. Separation of Concerns</h3>
+              <p style="margin-bottom: 0;">
+                Keep layers clean: HTML holds semantic elements, CSS controls formatting layout variables, 
+                and JS manages state interaction behavior. Mixing concerns (e.g. style tags inside HTML nodes) 
+                increases system complexity and debugging overhead.
+              </p>
+            </div>
+          </article>
 
-        <!--structure-->
-        <section class="container">
-            <h2>Semantic Structure</h2>
-            <p>HTML is not about visuals. It defines meaning, hierarchy, and responsibility inside a system.</p>
-        </section>
+          <article class="card interactive-glow reveal-on-scroll">
+            <div class="card-content">
+              <h3>3. System Scalability</h3>
+              <p style="margin-bottom: 0;">
+                A strong foundation allows codebases to grow without breaking down. By relying on CSS variables 
+                and clean directory layouts (assets/css, assets/js), we keep resources light, modular, 
+                and easy to update.
+              </p>
+            </div>
+          </article>
 
-        <!--responsibility-->
-        <section class="container">
-            <h2>Separation of Concerns</h2>
-            <p>
-                HTML handles structure, CSS handles presentation, JavaScript handles behavior. Mixing these creates fragile systems.
-            </p>
-        </section>
+          <article class="card interactive-glow reveal-on-scroll">
+            <div class="card-content">
+              <h3>4. Zero Bloat Philosophy</h3>
+              <p style="margin-bottom: 0;">
+                Modern web projects are often weighed down by nested framework compilation structures. 
+                We prioritize static optimization, fast loading times, and full code control to ensure high performance.
+              </p>
+            </div>
+          </article>
 
-        <!--evolution-->
-        <section class="container">
-            <h2>Thinking Long-term</h2>
-            <p>Real website evolve. A strong foundation allows change without collapse.</p>
-        </section>
+        </div>
+      </section>
 
+      <!-- Back button -->
+      <section class="container reveal-on-scroll" style="text-align: center;">
+        <div class="btn-group" style="justify-content: center;">
+          <a href="../learn.html" class="btn btn-secondary">← Back to Journal</a>
+          <a href="../documentation.html" class="btn btn-primary">Go to Documentation</a>
+        </div>
+      </section>
     </main>
 
+    <!-- Footer -->
     <footer class="site-footer">
-        <div class="container">
-            <p>&copy; 2026 Lil.Wide.Codes.</p>
-        </div>
+      <div class="container footer-content">
+        <div class="footer-logo">&copy; 2026 Lil.Wide.Codes</div>
+        <ul class="footer-links">
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../vision.html">Vision</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="../roadmap.html">Roadmap</a></li>
+        </ul>
+      </div>
     </footer>
-    
+
+    <!-- Scripts -->
     <script src="../../assets/js/navigation.js"></script>
-    
-</body>
+    <script src="../../assets/js/main.js"></script>
+  </body>
 </html>

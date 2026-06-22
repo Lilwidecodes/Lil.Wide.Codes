@@ -6,7 +6,7 @@
     <title>Learn - Lil.Wide.Codes</title>
     <meta
       name="description"
-      content="Learning systems, notes, and technical thinking by Lil.Wide.Codes."
+      content="Learning systems, build notes, and software journal logs by Lil.Wide.Codes."
     />
     <link rel="stylesheet" href="../assets/css/base.css" />
     <link rel="stylesheet" href="../assets/css/layout.css" />
@@ -14,71 +14,136 @@
     <link rel="stylesheet" href="../assets/css/theme.css" />
   </head>
   <body>
-    <!--header-->
+    <!-- Scroll Progress Bar -->
+    <div class="progress-bar"></div>
+
+    <!-- Header -->
     <header class="site-header">
       <nav class="nav container">
         <div class="brand">
-          <a href="../index.html">Lil.Wide.Codes</a>
+          <a href="../index.html">
+            <span class="brand-dot"></span>
+            Lil.Wide.Codes
+          </a>
         </div>
-        <button class="menu-toggle" aria-label="toggle menu">🟰</button>
         <ul class="nav-links">
           <li><a href="about.html">About</a></li>
           <li><a href="projects.html">Projects</a></li>
-          <li><a href="learn.html">Learn</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="learn.html">Journal</a></li>
           <li><a href="roadmap.html">Roadmap</a></li>
         </ul>
+        <div class="nav-actions">
+          <button class="menu-toggle" aria-label="toggle menu">🟰</button>
+        </div>
       </nav>
     </header>
 
+    <!-- Fullscreen Menu Overlay -->
+    <div class="nav-overlay">
+      <div class="nav-overlay-content">
+        <div class="overlay-group">
+          <h3>Platform</h3>
+          <ul>
+            <li><a href="products.html">Product Releases</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+            <li><a href="documentation.html">Documentation</a></li>
+          </ul>
+        </div>
+        <div class="overlay-group">
+          <h3>Engineering</h3>
+          <ul>
+            <li><a href="projects.html">Project Showcase</a></li>
+            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="roadmap.html">Roadmap</a></li>
+          </ul>
+        </div>
+        <div class="overlay-group">
+          <h3>Philosophy</h3>
+          <ul>
+            <li><a href="learn.html">Journal / Learn</a></li>
+            <li><a href="about.html">About Brand</a></li>
+            <li><a href="vision.html">Vision Plan</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
     <main>
-      <!--intro-->
-      <section class="container">
-        <h1>Learn</h1>
+      <!-- Page Hero -->
+      <section class="container reveal-on-scroll">
+        <h1 data-scramble>Engineering Journal</h1>
         <p>
-          Structured notes, concepts, and breakdowns from real software
-          engineering work.
+          We capture lessons, software guidelines, and configuration notes compiled during system builds. 
+          Documentation is the bridge that keeps engineering work accessible.
         </p>
       </section>
 
+      <!-- Journal Grid -->
       <section class="container learn-grid">
-        <article class="learn-card">
-          <h3><a href="learn/web-foundations.html">Web Foundations</a></h3>
-          <p>
-            HTML structured, CSS architecture, and how real websites are
-            organized.
-          </p>
-          <p class="muted">Status: Active</p>
+        
+        <!-- Article 1: Web Foundations -->
+        <article class="learn-card interactive-glow reveal-on-scroll">
+          <div class="card-content">
+            <div class="flex-row">
+              <h3>Web Foundations</h3>
+              <span class="status-badge completed">Active</span>
+            </div>
+            <p>
+              Semantic structuring rules, separation of design and behavior layers, and long-term modular code organisation.
+            </p>
+            <a href="learn/web-foundations.html" class="btn btn-secondary" style="width: 100%; margin-top: var(--space-xs);">Read Build Log</a>
+          </div>
         </article>
 
-        <article class="learn-card">
-          <h3>
-            <a href="learn/ui-layout-systems.html">UI & Layout Systems</a>
-          </h3>
-          <p>
-            Spacing, hierarchy, navigation systems, and responsive design
-            thinking.
-          </p>
-          <p class="muted">Status: Growing</p>
+        <!-- Article 2: UI & Layout Systems -->
+        <article class="learn-card interactive-glow reveal-on-scroll">
+          <div class="card-content">
+            <div class="flex-row">
+              <h3>UI & Layout Systems</h3>
+              <span class="status-badge active">Growing</span>
+            </div>
+            <p>
+              Spacing systems, visual hierarchy layout rules, responsive design viewport scaling, and navbar design.
+            </p>
+            <a href="learn/ui-layout-systems.html" class="btn btn-secondary" style="width: 100%; margin-top: var(--space-xs);">Read Build Log</a>
+          </div>
         </article>
 
-        <article class="learn-card muted">
-          <h3>
-            <a href="learn/javascript-systems.html">JavaScript Systems</a>
-          </h3>
-          <p>Interaction logic, state thinking, and behaviour control.</p>
-          <p class="muted">status: planned</p>
+        <!-- Article 3: JavaScript Systems -->
+        <article class="learn-card interactive-glow reveal-on-scroll">
+          <div class="card-content">
+            <div class="flex-row">
+              <h3>JavaScript Systems</h3>
+              <span class="status-badge active">Growing</span>
+            </div>
+            <p>
+              Predictable state changes, focused micro-scripts, DOM event-listener flows, and browser performance controls.
+            </p>
+            <a href="learn/javascript-systems.html" class="btn btn-secondary" style="width: 100%; margin-top: var(--space-xs);">Read Build Log</a>
+          </div>
         </article>
+
       </section>
     </main>
 
-    <!--footer-->
+    <!-- Footer -->
     <footer class="site-footer">
-      <div class="container">
-        <p>&copy; 2026 Lil.Wide.Codes</p>
+      <div class="container footer-content">
+        <div class="footer-logo">&copy; 2026 Lil.Wide.Codes</div>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="vision.html">Vision</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="roadmap.html">Roadmap</a></li>
+        </ul>
       </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="../assets/js/navigation.js"></script>
+    <script src="../assets/js/main.js"></script>
   </body>
 </html>

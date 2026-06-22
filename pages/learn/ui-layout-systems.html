@@ -1,84 +1,159 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UI & Layout Systems - Lil.Wide.Codes</title>
-    <meta name="description" content="Layout, spacing, hierarchy, and navigation systems for real interfaces."/>
+    <meta
+      name="description"
+      content="Spacing, layouts, responsive grids, and typography structures by Lil.Wide.Codes."
+    />
+    <link rel="stylesheet" href="../../assets/css/base.css" />
+    <link rel="stylesheet" href="../../assets/css/layout.css" />
+    <link rel="stylesheet" href="../../assets/css/components.css" />
+    <link rel="stylesheet" href="../../assets/css/theme.css" />
+  </head>
+  <body>
+    <!-- Scroll Progress Bar -->
+    <div class="progress-bar"></div>
 
-    <link rel="stylesheet" href="../../assets/css/base.css"/>
-    <link rel="stylesheet" href="../../assets/css/layout.css"/>
-    <link rel="stylesheet" href="../../assets/css/components.css"/>
-    <link rel="stylesheet" href="../../assets/css/theme.css"/>
-</head>
-
-<body>
-
+    <!-- Header -->
     <header class="site-header">
-        <nav class="nav container">
-            <div class="brand">
-                <a href="../../index.html">Lil.Wide.Codes</a>
-            </div>
-            <button class="menu-toggle">🟰</button>
-            <ul class="nav-links">
-                <li><a href="../projects.html">Projects</a></li>
-                <li><a href="../case-studies.html">Case Studies</a></li>
-                <li><a href="../learn.html">Learn</a></li>
-                <li><a href="../contact.html">Contact</a></li>
-                <li><a href="../roadmap.html">Roadmap</a></li>
-            </ul>
-        </nav>
+      <nav class="nav container">
+        <div class="brand">
+          <a href="../../index.html">
+            <span class="brand-dot"></span>
+            Lil.Wide.Codes
+          </a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../projects.html">Projects</a></li>
+          <li><a href="../case-studies.html">Case Studies</a></li>
+          <li><a href="../learn.html">Journal</a></li>
+          <li><a href="../roadmap.html">Roadmap</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="menu-toggle" aria-label="toggle menu">🟰</button>
+        </div>
+      </nav>
     </header>
 
+    <!-- Fullscreen Menu Overlay -->
+    <div class="nav-overlay">
+      <div class="nav-overlay-content">
+        <div class="overlay-group">
+          <h3>Platform</h3>
+          <ul>
+            <li><a href="../products.html">Product Releases</a></li>
+            <li><a href="../downloads.html">Downloads</a></li>
+            <li><a href="../documentation.html">Documentation</a></li>
+          </ul>
+        </div>
+        <div class="overlay-group">
+          <h3>Engineering</h3>
+          <ul>
+            <li><a href="../projects.html">Project Showcase</a></li>
+            <li><a href="../case-studies.html">Case Studies</a></li>
+            <li><a href="../roadmap.html">Roadmap</a></li>
+          </ul>
+        </div>
+        <div class="overlay-group">
+          <h3>Philosophy</h3>
+          <ul>
+            <li><a href="../learn.html">Journal / Learn</a></li>
+            <li><a href="../about.html">About Brand</a></li>
+            <li><a href="../vision.html">Vision Plan</a></li>
+            <li><a href="../contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
     <main>
+      <!-- Page Hero -->
+      <section class="container reveal-on-scroll">
+        <span class="status-badge active" style="margin-bottom: var(--space-sm);">Interface logic</span>
+        <h1 data-scramble>UI & Layout Systems</h1>
+        <p>
+          Interfaces feel premium and professional when spacing, typographic hierarchy, and responsive grids 
+          work together as a unified system.
+        </p>
+      </section>
 
-        <!--intro-->
-        <section class="container">
-            <h1>UI & Layout Systems</h1>
-            <p>interfaces feel professional when spacing, hierarchy, and navigation work together as a system.</p>
-        </section>
+      <!-- Grid Content -->
+      <section class="container">
+        <div class="grid-2">
+          
+          <article class="card interactive-glow reveal-on-scroll">
+            <div class="card-content">
+              <h3>1. Visual Hierarchy</h3>
+              <p style="margin-bottom: 0;">
+                Typography scale controls visitor attention. Headings lead with bold weights and tighter line heights, 
+                body text remains highly readable, and metadata states are kept distinct using muted gray colors.
+              </p>
+            </div>
+          </article>
 
-        <!--hierarchy-->
-        <section class="container">
-            <h2>Visual Hierarchy</h2>
-            <p>Hierarchy controls attention. Headings lead, paragraphs support, muted text stays quiet.</p>
-        </section>
+          <article class="card interactive-glow reveal-on-scroll">
+            <div class="card-content">
+              <h3>2. Spacing Rhythm</h3>
+              <p style="margin-bottom: 0;">
+                Consistent spacing creates visual calm. Random padding values generate visual noise. We structure 
+                our margins and padding around standardized rem multiples (0.5rem, 1rem, 1.5rem, 2rem) 
+                to ensure uniform density.
+              </p>
+            </div>
+          </article>
 
-        <!--spacing-->
-        <section class="container">
-            <h2>Spacing Rhythm</h2>
-            <p>
-                Consistent spacing creates calm. Random spacing creates noise and confusion.
-            </p>
-        </section>
+          <article class="card interactive-glow reveal-on-scroll">
+            <div class="card-content">
+              <h3>3. Grid & Flexbox Mapping</h3>
+              <p style="margin-bottom: 0;">
+                CSS Grid handles multi-column pages, while Flexbox aligns internal components. Using clean CSS rules 
+                removes the need for heavy visual utility classes inside HTML elements.
+              </p>
+            </div>
+          </article>
 
-        <!--layout-->
-        <section class="container">
-            <h2>Layout Systems</h2>
-            <p>containers, grids, and alignment define structure. Layout is not decoration; it's organization.</p>
-        </section>
+          <article class="card interactive-glow reveal-on-scroll">
+            <div class="card-content">
+              <h3>4. Responsive Fluidity</h3>
+              <p style="margin-bottom: 0;">
+                Responsive design is about re-organizing layout systems based on browser viewport constraints. 
+                Using relative media queries (e.g. 768px thresholds) allows elements to adjust naturally.
+              </p>
+            </div>
+          </article>
 
-        <!--Navigation-->
-        <section class="container">
-            <h2>Navigation Behavior</h2>
-            <p>Navigation must feel solid on desktop and intentional on mobile. Menus should never feel like floating text.</p>
-        </section>
+        </div>
+      </section>
 
-        <!--Responsive-->
-        <section class="container">
-            <h2>Responsive Thinking</h2>
-            <p>Responsive design is not shrinking content. It's re-organizing systems based on context.</p>
-        </section>
-
+      <!-- Back button -->
+      <section class="container reveal-on-scroll" style="text-align: center;">
+        <div class="btn-group" style="justify-content: center;">
+          <a href="../learn.html" class="btn btn-secondary">← Back to Journal</a>
+          <a href="../documentation.html" class="btn btn-primary">Go to Documentation</a>
+        </div>
+      </section>
     </main>
 
+    <!-- Footer -->
     <footer class="site-footer">
-        <div class="container">
-            <p>&copy; 2026 Lil.Wide.Codes.</p>
-        </div>
+      <div class="container footer-content">
+        <div class="footer-logo">&copy; 2026 Lil.Wide.Codes</div>
+        <ul class="footer-links">
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../vision.html">Vision</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="../roadmap.html">Roadmap</a></li>
+        </ul>
+      </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="../../assets/js/navigation.js"></script>
-    
-</body>
+    <script src="../../assets/js/main.js"></script>
+  </body>
 </html>

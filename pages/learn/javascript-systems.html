@@ -1,87 +1,158 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JavaScript Systems - Lil.Wide.Codes</title>
-    <meta name="description" content="Behavior, interaction, and system thinking with JavaScript."/>
-    <link rel="stylesheet" href="../../assets/css/base.css"/>
-    <link rel="stylesheet" href="../../assets/css/layout.css"/>
-    <link rel="stylesheet" href="../../assets/css/components.css"/>
-    <link rel="stylesheet" href="../../assets/css/theme.css"/>
-</head>
+    <meta
+      name="description"
+      content="Behavior controls, DOM manipulation, state thinking, and event tracking by Lil.Wide.Codes."
+    />
+    <link rel="stylesheet" href="../../assets/css/base.css" />
+    <link rel="stylesheet" href="../../assets/css/layout.css" />
+    <link rel="stylesheet" href="../../assets/css/components.css" />
+    <link rel="stylesheet" href="../../assets/css/theme.css" />
+  </head>
+  <body>
+    <!-- Scroll Progress Bar -->
+    <div class="progress-bar"></div>
 
-<body>
-
+    <!-- Header -->
     <header class="site-header">
-        <nav class="nav container">
-            <div class="brand">
-                <a href="../../index.html">Lil.Wide.Codes</a>
-            </div>
-            <button class="menu-toggle">🟰</button>
-            <ul class="nav-links">
-                <li><a href="../projects.html">Projects</a></li>
-                <li><a href="../case-studies.html">Case Studies</a></li>
-                <li><a href="../learn.html">Learn</a></li>
-                <li><a href="../contact.html">Contact</a></li>
-                <li><a href="../roadmap.html">Roadmap</a></li>
-            </ul>
-        </nav>
+      <nav class="nav container">
+        <div class="brand">
+          <a href="../../index.html">
+            <span class="brand-dot"></span>
+            Lil.Wide.Codes
+          </a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../projects.html">Projects</a></li>
+          <li><a href="../case-studies.html">Case Studies</a></li>
+          <li><a href="../learn.html">Journal</a></li>
+          <li><a href="../roadmap.html">Roadmap</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="menu-toggle" aria-label="toggle menu">🟰</button>
+        </div>
+      </nav>
     </header>
 
+    <!-- Fullscreen Menu Overlay -->
+    <div class="nav-overlay">
+      <div class="nav-overlay-content">
+        <div class="overlay-group">
+          <h3>Platform</h3>
+          <ul>
+            <li><a href="../products.html">Product Releases</a></li>
+            <li><a href="../downloads.html">Downloads</a></li>
+            <li><a href="../documentation.html">Documentation</a></li>
+          </ul>
+        </div>
+        <div class="overlay-group">
+          <h3>Engineering</h3>
+          <ul>
+            <li><a href="../projects.html">Project Showcase</a></li>
+            <li><a href="../case-studies.html">Case Studies</a></li>
+            <li><a href="../roadmap.html">Roadmap</a></li>
+          </ul>
+        </div>
+        <div class="overlay-group">
+          <h3>Philosophy</h3>
+          <ul>
+            <li><a href="../learn.html">Journal / Learn</a></li>
+            <li><a href="../about.html">About Brand</a></li>
+            <li><a href="../vision.html">Vision Plan</a></li>
+            <li><a href="../contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
     <main>
+      <!-- Page Hero -->
+      <section class="container reveal-on-scroll">
+        <span class="status-badge active" style="margin-bottom: var(--space-sm);">Behavior logic</span>
+        <h1 data-scramble>JavaScript Systems</h1>
+        <p>
+          JavaScript adds interactive behavior to web systems. When implemented correctly, 
+          it supports visual structure instead of fighting against it.
+        </p>
+      </section>
 
-        <!--intro-->
-        <section class="container">
-            <h1>JavaScript Systems</h1>
-            <p>
-                JavaScript adds behavior to systems when used correctly, it enhances structure instead of fighting it.
-            </p>
-        </section>
+      <!-- Grid Content -->
+      <section class="container">
+        <div class="grid-2">
+          
+          <article class="card interactive-glow reveal-on-scroll">
+            <div class="card-content">
+              <h3>1. Unified State Thinking</h3>
+              <p style="margin-bottom: 0;">
+                A interface component is always in a specific state. JavaScript is responsible for managing 
+                the transitions between states (e.g. toggling menu visibility classes) cleanly and predictably.
+              </p>
+            </div>
+          </article>
 
-        <!--role-->
-        <Section class="container">
-            <h2>The Role of JavaScript</h2>
-            <p>JavaScript should control behavior and state, not layout or content structure.</p>
-        </Section>
+          <article class="card interactive-glow reveal-on-scroll">
+            <div class="card-content">
+              <h3>2. DOM Event Listeners</h3>
+              <p style="margin-bottom: 0;">
+                Connect listeners to DOMContentLoaded. Avoid inline script bindings within HTML tags. 
+                Using modular event selectors keeps interface actions transparent and isolated.
+              </p>
+            </div>
+          </article>
 
-        <!--interaction-->
-        <section class="container">
-            <h2>Interaction Control</h2>
-            <p>Events, listeners, and state changes must be predictable. One action should have one clear effect.</p>
-        </section>
+          <article class="card interactive-glow reveal-on-scroll">
+            <div class="card-content">
+              <h3>3. Micro-Script Responsibility</h3>
+              <p style="margin-bottom: 0;">
+                Limit script functions to single responsibilities. Overloading script controllers creates 
+                untracked side-effects and makes debugging difficult. Keep codebase modules small and focused.
+              </p>
+            </div>
+          </article>
 
-        <!--State-->
-        <section class="container">
-            <h2>State Thinking</h2>
-            <p>
-                A system is always in a state. JavaScript manages transitions between those states.
-            </p>
-        </section>
+          <article class="card interactive-glow reveal-on-scroll">
+            <div class="card-content">
+              <h3>4. Performance Optimization</h3>
+              <p style="margin-bottom: 0;">
+                Use passive scroll listeners and requestAnimationFrame handlers for animations. Minimize direct 
+                DOM manipulation layouts to prevent rendering lag.
+              </p>
+            </div>
+          </article>
 
-        <!--modularity-->
-        <section class="container">
-            <h2>Small, Focused Scripts</h2>
-            <p>
-                One script , one responsibility. Large scripts create invisible bugs and mental overload.
-            </p>
-        </section>
+        </div>
+      </section>
 
-        <!--long term-->
-        <section class="container">
-            <h2>Long-Term Stability</h2>
-            <p>Good JavaScript is boring. It works quietly in the background and does not demand attention.</p>
-        </section>
-
+      <!-- Back button -->
+      <section class="container reveal-on-scroll" style="text-align: center;">
+        <div class="btn-group" style="justify-content: center;">
+          <a href="../learn.html" class="btn btn-secondary">← Back to Journal</a>
+          <a href="../documentation.html" class="btn btn-primary">Go to Documentation</a>
+        </div>
+      </section>
     </main>
 
+    <!-- Footer -->
     <footer class="site-footer">
-        <div class="container">
-            <p>&copy; 2026 Lil.Wide.Codes</p>
-        </div>
+      <div class="container footer-content">
+        <div class="footer-logo">&copy; 2026 Lil.Wide.Codes</div>
+        <ul class="footer-links">
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../vision.html">Vision</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="../roadmap.html">Roadmap</a></li>
+        </ul>
+      </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="../../assets/js/navigation.js"></script>
-    
-</body>
+    <script src="../../assets/js/main.js"></script>
+  </body>
 </html>

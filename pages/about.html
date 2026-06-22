@@ -3,74 +3,146 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About - LIL.WIDE.CODES</title>
+    <title>About - Lil.Wide.Codes</title>
     <meta
       name="description"
-      content="About Lil.Wide.Codes - software engineering and building in public."
+      content="About Lil.Wide.Codes - software engineering, build-in-public philosophy, and brand guidelines."
     />
-
     <link rel="stylesheet" href="../assets/css/base.css" />
     <link rel="stylesheet" href="../assets/css/layout.css" />
     <link rel="stylesheet" href="../assets/css/components.css" />
     <link rel="stylesheet" href="../assets/css/theme.css" />
   </head>
-
   <body>
-    <!--header-->
+    <!-- Scroll Progress Bar -->
+    <div class="progress-bar"></div>
+
+    <!-- Header -->
     <header class="site-header">
       <nav class="nav container">
         <div class="brand">
-          <a href="../index.html">Lil.Wide.Codes</a>
+          <a href="../index.html">
+            <span class="brand-dot"></span>
+            Lil.Wide.Codes
+          </a>
         </div>
-        <button class="menu-toggle" aria-label="toggle menu">🟰</button>
         <ul class="nav-links">
           <li><a href="about.html">About</a></li>
           <li><a href="projects.html">Projects</a></li>
-          <li><a href="learn.html">Learn</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="learn.html">Journal</a></li>
           <li><a href="roadmap.html">Roadmap</a></li>
         </ul>
+        <div class="nav-actions">
+          <button class="menu-toggle" aria-label="toggle menu">🟰</button>
+        </div>
       </nav>
     </header>
 
-    <!--Main-->
+    <!-- Fullscreen Menu Overlay -->
+    <div class="nav-overlay">
+      <div class="nav-overlay-content">
+        <div class="overlay-group">
+          <h3>Platform</h3>
+          <ul>
+            <li><a href="products.html">Product Releases</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+            <li><a href="documentation.html">Documentation</a></li>
+          </ul>
+        </div>
+        <div class="overlay-group">
+          <h3>Engineering</h3>
+          <ul>
+            <li><a href="projects.html">Project Showcase</a></li>
+            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="roadmap.html">Roadmap</a></li>
+          </ul>
+        </div>
+        <div class="overlay-group">
+          <h3>Philosophy</h3>
+          <ul>
+            <li><a href="learn.html">Journal / Learn</a></li>
+            <li><a href="about.html">About Brand</a></li>
+            <li><a href="vision.html">Vision Plan</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
     <main>
-      <section class="container">
-        <h1>About Lil.Wide.Codes</h1>
+      <!-- Page Hero -->
+      <section class="container reveal-on-scroll">
+        <h1 data-scramble>About Lil.Wide.Codes</h1>
         <p>
-          Lil.Wide.Codes is a focused software engineering brand built around
-          learning, building, and sharing real work in public.
+          Lil.Wide.Codes is built as a technology brand and engineering platform whose purpose is to document growth, 
+          showcase real work, build software systems, publish projects, and evolve into a company that creates useful 
+          technology products.
         </p>
       </section>
 
-      <section class="container">
-        <h2>Approach</h2>
-        <p>
-          The approach is simple: master fundamentals, build real systems, and
-          improve through consistent execution.
-        </p>
+      <!-- Approach -->
+      <section class="container reveal-on-scroll">
+        <div class="grid-2">
+          
+          <div class="card interactive-glow">
+            <div class="card-content">
+              <h3>Core Mission</h3>
+              <p style="margin-bottom: 0;">
+                To document and transform technical growth into real engineering output by creating software, 
+                publishing projects, sharing system thinking, and developing useful digital systems. 
+                We are not a tutorial site or a personal diary—every page proves that we build, learn, document, 
+                and release.
+              </p>
+            </div>
+          </div>
+
+          <div class="card interactive-glow">
+            <div class="card-content">
+              <h3>Core Principles</h3>
+              <ul class="timeline-content" style="list-style: none;">
+                <li>Build publicly and document honestly</li>
+                <li>Prioritize quality and clean architecture</li>
+                <li>Master software fundamentals</li>
+                <li>Evolve systems through incremental phases</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
       </section>
 
-      <section class="container">
-        <h2>Core Focus</h2>
+      <!-- Philosophy details -->
+      <section class="container reveal-on-scroll">
+        <h2>We Build. We Learn. We Document. We Release.</h2>
         <p>
-          Software engineering and modern web systems form the foundation of
-          everything built here.
+          Our platform operates under a system-first mentality. We believe that visual aesthetics and 
+          high-quality implementation should go hand-in-hand. By stripping away developer bloat, we focus on 
+          the core technologies that make web interfaces fast, clean, and interactive.
         </p>
-      </section>
-
-      <section class="container">
-        <a href="vision.html" class="text-link">Read the long-term vision</a>
+        <div class="btn-group">
+          <a href="vision.html" class="btn btn-primary">Read the Long-Term Vision</a>
+          <a href="contact.html" class="btn btn-secondary">Get in touch</a>
+        </div>
       </section>
     </main>
 
-    <!--Footer-->
+    <!-- Footer -->
     <footer class="site-footer">
-      <div class="container">
-        <p>&copy; 2026 Lil.Wide.Codes.</p>
+      <div class="container footer-content">
+        <div class="footer-logo">&copy; 2026 Lil.Wide.Codes</div>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="vision.html">Vision</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="roadmap.html">Roadmap</a></li>
+        </ul>
       </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="../assets/js/navigation.js"></script>
+    <script src="../assets/js/main.js"></script>
   </body>
 </html>

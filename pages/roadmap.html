@@ -1,90 +1,164 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Roadmap & Versions - Lil.Wide.Codes</title>
-    <meta name="description" content="Versioned growth plan for Lil.Wide.Codes."/>
-    <link rel="stylesheet" href="../assets/css/base.css"/>
-    <link rel="stylesheet" href="../assets/css/layout.css"/>
-    <link rel="stylesheet" href="../assets/css/components.css"/>
-    <link rel="stylesheet" href="../assets/css/theme.css"/>
-</head>
+    <meta
+      name="description"
+      content="Versioned growth plan and development roadmap for Lil.Wide.Codes."
+    />
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <link rel="stylesheet" href="../assets/css/layout.css" />
+    <link rel="stylesheet" href="../assets/css/components.css" />
+    <link rel="stylesheet" href="../assets/css/theme.css" />
+  </head>
+  <body>
+    <!-- Scroll Progress Bar -->
+    <div class="progress-bar"></div>
 
-<body>
-
+    <!-- Header -->
     <header class="site-header">
-        <nav class="nav container">
-            <div class="brand">
-                <a href="../index.html">Lil.Wide.Codes</a>
-            </div>
-
-            <button class="menu-toggle">🟰</button>
-
-             <ul class="nav-links">
+      <nav class="nav container">
+        <div class="brand">
+          <a href="../index.html">
+            <span class="brand-dot"></span>
+            Lil.Wide.Codes
+          </a>
+        </div>
+        <ul class="nav-links">
           <li><a href="about.html">About</a></li>
           <li><a href="projects.html">Projects</a></li>
-          <li><a href="learn.html">Learn</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="learn.html">Journal</a></li>
+          <li><a href="roadmap.html">Roadmap</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="menu-toggle" aria-label="toggle menu">🟰</button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Fullscreen Menu Overlay -->
+    <div class="nav-overlay">
+      <div class="nav-overlay-content">
+        <div class="overlay-group">
+          <h3>Platform</h3>
+          <ul>
+            <li><a href="products.html">Product Releases</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+            <li><a href="documentation.html">Documentation</a></li>
+          </ul>
+        </div>
+        <div class="overlay-group">
+          <h3>Engineering</h3>
+          <ul>
+            <li><a href="projects.html">Project Showcase</a></li>
+            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="roadmap.html">Roadmap</a></li>
+          </ul>
+        </div>
+        <div class="overlay-group">
+          <h3>Philosophy</h3>
+          <ul>
+            <li><a href="learn.html">Journal / Learn</a></li>
+            <li><a href="about.html">About Brand</a></li>
+            <li><a href="vision.html">Vision Plan</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Page Hero -->
+      <section class="container reveal-on-scroll">
+        <h1 data-scramble>Development Roadmap</h1>
+        <p>
+          Lil.Wide.Codes is built in incremental phases. Our version system tracks active systems, 
+          upcoming release targets, and long-term intelligence blueprints.
+        </p>
+      </section>
+
+      <!-- Timeline Section -->
+      <section class="container">
+        <div class="timeline">
+          
+          <!-- Timeline Item 1: V1 -->
+          <div class="timeline-item reveal-on-scroll">
+            <div class="timeline-dot-marker"></div>
+            <div class="timeline-header">
+              <h3>Version 1.0 - Core Foundation</h3>
+              <span class="status-badge completed">Completed</span>
+            </div>
+            <div class="timeline-content">
+              <p>Establishing the structural architecture and core pathways of the platform.</p>
+              <ul>
+                <li>Static site skeleton using semantic tags</li>
+                <li>Modular styling layers structure</li>
+                <li>Basic navigation system</li>
+                <li>Responsive viewport testing</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2: V2 -->
+          <div class="timeline-item reveal-on-scroll">
+            <div class="timeline-dot-marker" style="border-color: var(--color-accent-blue);"></div>
+            <div class="timeline-header">
+              <h3>Version 2.0 - Rich Interactivity</h3>
+              <span class="status-badge active">Active</span>
+            </div>
+            <div class="timeline-content">
+              <p>Enhancing client-side logic, brand styling depth, and dynamic widgets.</p>
+              <ul>
+                <li>Sleek dark theme overhaul with cursor spotlight glowing cards</li>
+                <li>Interactive terminal shell CLI module on homepage</li>
+                <li>Hacker scramble decoding text effects</li>
+                <li>Categorized project filtering lists</li>
+                <li>Additional site hubs (Documentation, Products, Downloads)</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Timeline Item 3: V3 -->
+          <div class="timeline-item reveal-on-scroll" style="opacity: 0.6;">
+            <div class="timeline-dot-marker" style="border-color: var(--color-accent-purple); box-shadow: 0 0 8px var(--color-accent-purple);"></div>
+            <div class="timeline-header">
+              <h3>Version 3.0 - Software Releases</h3>
+              <span class="status-badge planned">Planned</span>
+            </div>
+            <div class="timeline-content">
+              <p>Deploying downloadable developer tools, scripting APIs, and AI sandboxes.</p>
+              <ul>
+                <li>Functional release of GridCraft CSS Sandbox tool</li>
+                <li>BulkRenamer CLI script available in downloads center</li>
+                <li>Standardized API blueprint template repositories</li>
+                <li>AI prompt gateway integration prototypes</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <div class="footer-logo">&copy; 2026 Lil.Wide.Codes</div>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="vision.html">Vision</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="roadmap.html">Roadmap</a></li>
         </ul>
-    </header>
-
-    <main>
-
-        <!--intro-->
-        <section class="container">
-            <h1>Roadmap & Versioning</h1>
-            <p>
-                Lil.Wide.Codes is built in versions. Each version improves clarity, capability, and system strength.
-            </p>
-        </section>
-
-        <!--V1-->
-        <section class="container">
-            <h2>Version 1 - Foundation</h2>
-            <ul>
-                <li>Static site architecture</li>
-                <li>Clear navigation</li>
-                <li>Projects, Learn, Case Studies</li>
-                <li>Responsive layout</li>
-            </ul>
-            <p class="muted">Status: Completed</p>
-        </section>
-
-        <!--V2-->
-        <section class="container">
-            <h2>Version 2 - Interactivity</h2>
-            <ul>
-                <li>Improved mobile navigation</li>
-                <li>interactive project filtering</li>
-                <li>Enhanced Case Study depth</li>
-                <li>Reusable JavaScript modules</li>
-            </ul>
-            <p class="muted">Status: Planned</p>
-        </section>
-
-        <!--V3-->
-        <section class="container">
-            <h2>Version 3 - Intelligence</h2>
-            <ul>
-                <li>AI-assisted learning tools</li>
-                <li>Dynamic content loading</li>
-                <li>User personalization</li>
-                <li>scalable architecture</li>
-            </ul>
-            <p class="muted">Status: Vision</p>
-        </section>
-
-    </main>
-
-    <footer class="site-footer">
-        <div class="container">
-            <p>&copy; 2026 Lil.Wide.Codes.</p>
-        </div>
+      </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="../assets/js/navigation.js"></script>
-    
-</body>
+    <script src="../assets/js/main.js"></script>
+  </body>
 </html>
