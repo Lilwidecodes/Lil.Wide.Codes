@@ -1,4 +1,4 @@
-/* MAIN CONTROLLER - Lil.Wide.Codes V2 | Purpose: Interactive cursor glow, text scramble, CLI terminal, project filtering */
+/* MAIN CONTROLLER - Lil.Wide.Codes V3 | Purpose: Spotlight glow, text scramble, terminal shell, offline banners, code sandbox & blueprints */
 
 document.addEventListener("DOMContentLoaded", () => {
   
@@ -87,14 +87,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Hook scramble effect to titles on load
+  // Hook scramble effect to titles
   const scrambleTitles = document.querySelectorAll("[data-scramble]");
   scrambleTitles.forEach(title => {
     const originalText = title.innerText;
     const scrambler = new TextScrambler(title);
     scrambler.setText(originalText);
     
-    // Scramble again on hover
     title.addEventListener("mouseenter", () => {
       scrambler.setText(originalText);
     });
@@ -107,7 +106,6 @@ document.addEventListener("DOMContentLoaded", () => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add("revealed");
-          // Optionally stop observing once revealed
           observer.unobserve(entry.target);
         }
       });
@@ -118,7 +116,6 @@ document.addEventListener("DOMContentLoaded", () => {
     
     revealElements.forEach(el => observer.observe(el));
   } else {
-    // Fallback if observer not supported
     revealElements.forEach(el => el.classList.add("revealed"));
   }
 
@@ -128,7 +125,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const body = terminal.querySelector(".terminal-body");
     const input = terminal.querySelector(".terminal-text-input");
     
-    // Command History
     const commandResponses = {
       help: "Available commands:<br>&nbsp;&nbsp;about&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Learn why we exist<br>&nbsp;&nbsp;projects&nbsp;&nbsp;- Show active system developments<br>&nbsp;&nbsp;roadmap&nbsp;&nbsp;&nbsp;- View version timelines<br>&nbsp;&nbsp;vision&nbsp;&nbsp;&nbsp;&nbsp;- Long-term product roadmap<br>&nbsp;&nbsp;social&nbsp;&nbsp;&nbsp;&nbsp;- Links to public building channels<br>&nbsp;&nbsp;clear&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Clear the console screen",
       about: "LIL.WIDE.CODES is a technology brand built on honesty and capability.<br>We master fundamentals, build real systems, and improve publicly.<br>Goal: Evolve from an engineering journal into a software products company.",
@@ -139,7 +135,6 @@ document.addEventListener("DOMContentLoaded", () => {
       clear: "clear"
     };
 
-    // Welcome message helper
     const printLine = (text, className = "terminal-output") => {
       const line = document.createElement("div");
       line.className = `terminal-line ${className}`;
@@ -153,24 +148,20 @@ document.addEventListener("DOMContentLoaded", () => {
         const cmd = input.value.trim().toLowerCase();
         input.value = "";
         
-        // Print echo command
         printLine(`$ ${cmd}`, "terminal-echo");
-        
         if (cmd === "") return;
         
         if (cmd === "clear") {
-          // Clear lines, keeping input
           const lines = body.querySelectorAll(".terminal-line");
           lines.forEach(l => l.remove());
         } else if (commandResponses[cmd]) {
           printLine(commandResponses[cmd]);
         } else {
-          printLine(`Command not found: ${cmd}. Type <span style="color: var(--color-accent-cyan)">'help'</span> for a list of commands.`, "terminal-error");
+          printLine(`Command not found: ${cmd}. Type <span style="color: var(--color-accent-cyan)">'help'</span> for list.`, "terminal-error");
         }
       }
     });
 
-    // Autofocus terminal input when clicking terminal body
     body.addEventListener("click", () => {
       input.focus();
     });
@@ -179,23 +170,18 @@ document.addEventListener("DOMContentLoaded", () => {
   // 6. DYNAMIC PROJECTS FILTERING
   const projectGrid = document.querySelector(".project-grid");
   const filterBtns = document.querySelectorAll(".filter-btn");
-  
   if (projectGrid && filterBtns.length > 0) {
     const cards = projectGrid.querySelectorAll(".project-card");
-    
     filterBtns.forEach(btn => {
       btn.addEventListener("click", () => {
-        // Toggle active button style
         filterBtns.forEach(b => b.classList.remove("active"));
         btn.classList.add("active");
         
         const filterVal = btn.getAttribute("data-filter");
-        
         cards.forEach(card => {
           const cardType = card.getAttribute("data-type");
           if (filterVal === "all" || cardType === filterVal) {
             card.style.display = "block";
-            // Smoothly animate in
             card.style.opacity = "0";
             setTimeout(() => {
               card.style.opacity = "1";
@@ -208,4 +194,75 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+
+  // 7. INTERACTIVE CLIENT-SIDE CODE SANDBOX RUNNERS
+  const sandboxRunners = document.querySelectorAll(".sandbox-run-btn");
+  sandboxRunners.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const sandbox = btn.closest(".code-sandbox");
+      if (!sandbox) return;
+      
+      const code = sandbox.getAttribute("data-code");
+      const outputBox = sandbox.querySelector(".sandbox-output");
+      if (!outputBox) return;
+
+      let logs = [];
+      const fakeConsole = {
+        log: (...args) => logs.push(args.map(a => typeof a === 'object' ? JSON.stringify(a) : a).join(" "))
+      };
+
+      try {
+        const runFn = new Function("console", code);
+        runFn(fakeConsole);
+        outputBox.innerHTML = `<strong>Output:</strong><br>${logs.length > 0 ? logs.join("<br>") : "Script executed successfully with no console output."}`;
+        outputBox.style.color = "var(--color-accent-cyan)";
+      } catch (err) {
+        outputBox.innerHTML = `<strong>Execution Error:</strong><br>${err.message}`;
+        outputBox.style.color = "#ff5f56";
+      }
+
+      outputBox.classList.add("open");
+    });
+  });
+
+  // 8. INTERACTIVE SVG BLUEPRINT DIAGRAM NODES
+  const blueprintNodes = document.querySelectorAll(".blueprint-node");
+  const infoTitle = document.getElementById("blueprint-info-title");
+  const infoDesc = document.getElementById("blueprint-info-desc");
+
+  if (blueprintNodes.length > 0 && infoTitle && infoDesc) {
+    blueprintNodes.forEach(node => {
+      const activateNode = () => {
+        blueprintNodes.forEach(n => n.classList.remove("active"));
+        node.classList.add("active");
+
+        const title = node.getAttribute("data-title");
+        const desc = node.getAttribute("data-desc");
+
+        infoTitle.innerText = title;
+        infoDesc.innerText = desc;
+      };
+
+      node.addEventListener("mouseenter", activateNode);
+      node.addEventListener("click", activateNode);
+    });
+  }
+
+  // 9. OFFLINE CONNECTION WARNING BANNER
+  const banner = document.createElement("div");
+  banner.className = "offline-banner";
+  banner.innerText = "Connection lost. Serving site pages from offline cache.";
+  document.body.appendChild(banner);
+
+  const updateOnlineStatus = () => {
+    if (navigator.onLine) {
+      banner.classList.remove("visible");
+    } else {
+      banner.classList.add("visible");
+    }
+  };
+
+  window.addEventListener("online", updateOnlineStatus);
+  window.addEventListener("offline", updateOnlineStatus);
+  updateOnlineStatus();
 });

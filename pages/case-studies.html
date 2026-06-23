@@ -34,7 +34,21 @@
           <li><a href="roadmap.html">Roadmap</a></li>
         </ul>
         <div class="nav-actions">
-          <button class="menu-toggle" aria-label="toggle menu">🟰</button>
+          <button class="theme-toggle-btn" aria-label="Toggle Theme">
+            <svg class="moon-icon" viewBox="0 0 24 24">
+              <path d="M12.3 22h-.1c-5.5 0-10-4.5-10-10 0-4.8 3.5-8.9 8.2-9.8.6-.1 1.2.3 1.3.9.1.6-.3 1.2-.9 1.3-3.7.7-6.4 4-6.4 7.8 0 4.4 3.6 8 8 8 3.8 0 7.1-2.7 7.8-6.4.1-.6.7-1 1.3-.9.6.1 1 .7.9 1.3-.9 4.7-5 8.2-9.8 8.2z"/>
+            </svg>
+            <svg class="sun-icon" viewBox="0 0 24 24">
+              <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 8c-1.65 0-3-1.35-3-3s1.35-3 3-3 3 1.35 3 3-1.35 3-3 3zm0-10c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1s-1 .45-1 1v1c0 .55.45 1 1 1zm0 14c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1s1-.45 1-1v-1c0-.55-.45-1-1-1zm8.66-10c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1s1-.45 1-1v-1c0-.55-.45-1-1-1zM5.34 6c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1s1-.45 1-1V7c0-.55-.45-1-1-1zm13.32 10.66c-.39-.39-1.02-.39-1.41 0s-.39 1.02 0 1.41l.71.71c.39.39 1.02.39 1.41 0s.39-1.02 0-1.41l-.71-.71zm-12.02-12c-.39-.39-1.02-.39-1.41 0s-.39 1.02 0 1.41l.71.71c.39.39 1.02.39 1.41 0s.39-1.02 0-1.41l-.71-.71zm12.02 12c-.39-.39-1.02-.39-1.41 0s-.39 1.02 0 1.41l.71.71c.39.39 1.02.39 1.41 0s.39-1.02 0-1.41l-.71-.71zm-12.02-12c-.39-.39-1.02-.39-1.41 0s-.39 1.02 0 1.41l.71.71c.39.39 1.02.39 1.41 0s.39-1.02 0-1.41l-.71-.71z"/>
+            </svg>
+          </button>
+          <button class="menu-toggle" aria-label="toggle menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+              <line class="line line-top" x1="4" y1="6" x2="20" y2="6"></line>
+              <line class="line line-middle" x1="4" y1="12" x2="20" y2="12"></line>
+              <line class="line line-bottom" x1="4" y1="18" x2="20" y2="18"></line>
+            </svg>
+          </button>
         </div>
       </nav>
     </header>
@@ -79,6 +93,52 @@
           Deep technical breakdowns of real systems we have designed, tested, and shipped. 
           Each study outlines objective parameters, technology layers, architectural challenges, and final outcomes.
         </p>
+      </section>
+
+      <!-- Interactive Blueprint Diagram -->
+      <section class="container reveal-on-scroll" style="padding-top: 0;">
+        <h2>Interactive System Blueprint</h2>
+        <p>Analyze how the V3 service worker and offline cache flows operate client-side inside the hub runtime.</p>
+        
+        <div class="svg-blueprint-container">
+          <svg class="blueprint-svg" viewBox="0 0 600 200" fill="none">
+            <!-- Arrow markers definitions -->
+            <defs>
+              <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--color-text-muted)"></path>
+              </marker>
+            </defs>
+
+            <!-- Connecting paths -->
+            <path class="blueprint-line" d="M 120 100 L 190 100" marker-end="url(#arrow)"></path>
+            <path class="blueprint-line" d="M 310 100 L 370 100" marker-end="url(#arrow)"></path>
+            <path class="blueprint-line" d="M 250 70 L 250 40 L 430 40 L 430 70" marker-end="url(#arrow)"></path>
+
+            <!-- Node 1: Browser -->
+            <g class="blueprint-node active" id="node-browser" data-title="Client Browser Viewport" data-desc="Compiles and renders HSL design variables, executes text scrambler cycles, tracks cursor spotlight values, and binds forms.">
+              <rect x="15" y="70" width="105" height="60" rx="8"></rect>
+              <text x="67" y="105" text-anchor="middle">Browser DOM</text>
+            </g>
+
+            <!-- Node 2: Service Worker -->
+            <g class="blueprint-node" id="node-sw" data-title="Service Worker interceptor" data-desc="Acts as a developer-proxy. Catches browser requests, check local assets list, and serves cached shell pages instantly.">
+              <rect x="200" y="70" width="110" height="60" rx="8"></rect>
+              <text x="255" y="105" text-anchor="middle">Service Worker</text>
+            </g>
+
+            <!-- Node 3: Offline cache -->
+            <g class="blueprint-node" id="node-cache" data-title="PWA Offline Cache Storage" data-desc="Stores system styles, navigation models, and documentation files locally. Serves pages when network queries drop.">
+              <rect x="380" y="70" width="110" height="60" rx="8"></rect>
+              <text x="435" y="105" text-anchor="middle">Cache Storage</text>
+            </g>
+          </svg>
+
+          <!-- Dynamic description panel -->
+          <div class="blueprint-info-pane">
+            <h4 id="blueprint-info-title">Client Browser Viewport</h4>
+            <p id="blueprint-info-desc">Compiles and renders HSL design variables, executes text scrambler cycles, tracks cursor spotlight values, and binds forms.</p>
+          </div>
+        </div>
       </section>
 
       <!-- Case Studies List -->

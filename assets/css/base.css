@@ -1,10 +1,10 @@
-/* BASE CSS - Lil.Wide.Codes V2 | Purpose: Reset, design system, typography */
+/* BASE CSS - Lil.Wide.Codes V3 | Purpose: Reset, design system, theme variables, typography */
 
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 /* CSS VARIABLES */
 :root {
-  /* HSL Color System */
+  /* HSL Color System - Default Dark Theme */
   --bg-raw: 224 25% 5%;
   --surface-raw: 224 20% 9%;
   --surface-hover-raw: 224 18% 13%;
@@ -56,6 +56,29 @@
   --space-xxl: 5rem;
 }
 
+/* Light Theme Variable Overrides */
+body.light-theme {
+  --bg-raw: 220 30% 95%;
+  --surface-raw: 220 20% 90%;
+  --surface-hover-raw: 220 18% 84%;
+  --accent-cyan-raw: 195 100% 40%;
+  --accent-blue-raw: 217 100% 45%;
+  --accent-purple-raw: 263 70% 50%;
+  --accent-orange-raw: 16 95% 45%;
+  
+  --color-bg: hsl(var(--bg-raw));
+  --color-surface: hsl(var(--surface-raw));
+  --color-surface-hover: hsl(var(--surface-hover-raw));
+  --color-surface-glass: rgba(235, 238, 243, 0.8);
+  
+  --color-text-primary: hsl(220 40% 12%);
+  --color-text-secondary: hsl(220 20% 32%);
+  --color-text-muted: hsl(220 15% 50%);
+  
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-border-glow: rgba(0, 150, 200, 0.2);
+}
+
 /* RESET */
 *,
 *::before,
@@ -82,6 +105,11 @@ body {
   position: relative;
 }
 
+/* Theme Switching Smooth Fade */
+body, header, footer, section, .card, .project-card, .case-card, .learn-card, .terminal-window, .nav-overlay, .btn, .nav-links a {
+  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -90,7 +118,7 @@ body {
   background: var(--color-bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(120, 120, 120, 0.2);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -131,7 +159,6 @@ p {
 a {
   color: var(--color-text-primary);
   text-decoration: none;
-  transition: var(--transition-fast);
 }
 
 /* UTILITIES */

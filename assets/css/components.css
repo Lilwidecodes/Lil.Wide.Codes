@@ -1,4 +1,4 @@
-/* COMPONENTS CSS - Lil.Wide.Codes V2 | Purpose: Glass cards, terminal widget, buttons, timelines */
+/* COMPONENTS CSS - Lil.Wide.Codes V3 | Purpose: Glass cards, terminal, changelogs, timelines, sandbox & banners */
 
 /* BUTTONS */
 .btn {
@@ -39,6 +39,13 @@
   transform: translateY(-2px);
 }
 
+body.light-theme .btn-secondary {
+  background: rgba(0, 0, 0, 0.02);
+}
+body.light-theme .btn-secondary:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
 .btn-group {
   display: flex;
   gap: 1rem;
@@ -58,6 +65,10 @@
   overflow: hidden;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+}
+
+body.light-theme .card, body.light-theme .project-card, body.light-theme .case-card, body.light-theme .learn-card {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
 }
 
 .card:hover, .project-card:hover, .case-card:hover, .learn-card:hover {
@@ -89,6 +100,14 @@
   transition: opacity 0.5s ease;
 }
 
+body.light-theme .interactive-glow::before {
+  background: radial-gradient(
+    600px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+    rgba(0, 150, 200, 0.05),
+    transparent 40%
+  );
+}
+
 .interactive-glow:hover::before {
   opacity: 1;
 }
@@ -96,6 +115,36 @@
 .card-content {
   position: relative;
   z-index: 2;
+}
+
+/* METRICS STATUS DASHBOARD (Homepage V3) */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.metric-card {
+  text-align: center;
+  padding: var(--space-md) var(--space-sm);
+}
+
+.metric-value {
+  font-size: var(--text-xxl);
+  font-weight: 800;
+  color: var(--color-accent-cyan);
+  margin-bottom: var(--space-xs);
+  line-height: 1;
+  font-family: var(--font-mono);
+}
+
+.metric-label {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-text-muted);
+  font-weight: 600;
 }
 
 /* TECH STACKS */
@@ -116,6 +165,11 @@
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.06);
   color: var(--color-text-secondary);
+}
+
+body.light-theme .tech-stack li {
+  background: rgba(0, 0, 0, 0.03);
+  border-color: rgba(0, 0, 0, 0.05);
 }
 
 /* STATUS BADGE */
@@ -166,6 +220,11 @@
   max-width: 800px;
   margin-inline: auto;
   margin-top: var(--space-xl);
+}
+
+body.light-theme .terminal-window {
+  background: #f1f3f6;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .terminal-header {
@@ -311,6 +370,239 @@
   position: absolute;
   left: 0;
   color: var(--color-accent-cyan);
+}
+
+/* LINEAR-STYLE CHANGELOG STREAM */
+.changelog-stream {
+  margin-top: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.changelog-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: var(--space-md);
+  align-items: start;
+}
+
+@media (max-width: 600px) {
+  .changelog-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-xs);
+  }
+  .changelog-date {
+    margin-bottom: 0.2rem;
+  }
+}
+
+.changelog-date {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-accent-cyan);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.changelog-date::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent-cyan);
+  box-shadow: 0 0 6px var(--color-accent-cyan);
+}
+
+.changelog-card {
+  padding: var(--space-sm) var(--space-md);
+  border-radius: 8px;
+}
+
+.changelog-card h4 {
+  font-size: var(--text-md);
+  margin-bottom: 0.4rem;
+  color: var(--color-text-primary);
+}
+
+.changelog-card p {
+  font-size: var(--text-sm);
+  margin-bottom: 0;
+}
+
+/* INTERACTIVE CODE SANDBOX RUNNER (Docs V3) */
+.code-sandbox {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface);
+  overflow: hidden;
+  margin-top: var(--space-sm);
+}
+
+.sandbox-header {
+  background: rgba(255, 255, 255, 0.01);
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sandbox-lang {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.sandbox-run-btn {
+  background: var(--color-accent-cyan);
+  color: #06080e;
+  border: none;
+  padding: 0.25rem 0.6rem;
+  font-size: var(--text-xs);
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.sandbox-run-btn:hover {
+  background: var(--color-accent-blue);
+  color: #fff;
+}
+
+.sandbox-editor {
+  padding: 1rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  background: rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid var(--color-border);
+  overflow-x: auto;
+}
+
+.sandbox-output {
+  padding: 0.75rem 1rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-primary);
+  background: rgba(0, 0, 0, 0.3);
+  min-height: 40px;
+  display: none;
+  animation: slideDown 0.2s ease-out;
+}
+
+.sandbox-output.open {
+  display: block;
+}
+
+/* SVG INTERACTIVE FLOWCHARTS (Case Studies V3) */
+.svg-blueprint-container {
+  background: var(--color-surface-glass);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: var(--space-md);
+  margin-top: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.blueprint-svg {
+  width: 100%;
+  max-width: 650px;
+  height: auto;
+}
+
+.blueprint-node {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.blueprint-node rect {
+  fill: var(--color-surface);
+  stroke: var(--color-border);
+  stroke-width: 1.5px;
+  transition: var(--transition-fast);
+}
+
+.blueprint-node text {
+  fill: var(--color-text-secondary);
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: 14px;
+  transition: var(--transition-fast);
+}
+
+.blueprint-node:hover rect, .blueprint-node.active rect {
+  stroke: var(--color-accent-cyan);
+  fill: rgba(0, 242, 254, 0.05);
+}
+
+.blueprint-node:hover text, .blueprint-node.active text {
+  fill: var(--color-text-primary);
+}
+
+.blueprint-line {
+  stroke: var(--color-border);
+  stroke-width: 2px;
+  fill: none;
+  stroke-dasharray: 4;
+  animation: flowLine 20s linear infinite;
+}
+
+@keyframes flowLine {
+  to {
+    stroke-dashoffset: -200;
+  }
+}
+
+.blueprint-info-pane {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: var(--space-sm) var(--space-md);
+  border-left: 3px solid var(--color-accent-cyan);
+  min-height: 80px;
+}
+
+.blueprint-info-pane h4 {
+  color: var(--color-accent-cyan);
+  font-size: var(--text-md);
+  margin-bottom: 0.25rem;
+}
+
+.blueprint-info-pane p {
+  margin-bottom: 0;
+  font-size: var(--text-sm);
+}
+
+/* OFFLINE PWA BANNER ALERT */
+.offline-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background: var(--color-accent-orange);
+  color: #fff;
+  text-align: center;
+  font-size: var(--text-xs);
+  font-weight: bold;
+  padding-block: 0.35rem;
+  z-index: 1001;
+  display: none;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.offline-banner.visible {
+  display: block;
 }
 
 /* CASE STUDY DETAILS ACCORDION */

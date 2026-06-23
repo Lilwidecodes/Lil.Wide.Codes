@@ -34,7 +34,21 @@
           <li><a href="roadmap.html">Roadmap</a></li>
         </ul>
         <div class="nav-actions">
-          <button class="menu-toggle" aria-label="toggle menu">🟰</button>
+          <button class="theme-toggle-btn" aria-label="Toggle Theme">
+            <svg class="moon-icon" viewBox="0 0 24 24">
+              <path d="M12.3 22h-.1c-5.5 0-10-4.5-10-10 0-4.8 3.5-8.9 8.2-9.8.6-.1 1.2.3 1.3.9.1.6-.3 1.2-.9 1.3-3.7.7-6.4 4-6.4 7.8 0 4.4 3.6 8 8 8 3.8 0 7.1-2.7 7.8-6.4.1-.6.7-1 1.3-.9.6.1 1 .7.9 1.3-.9 4.7-5 8.2-9.8 8.2z"/>
+            </svg>
+            <svg class="sun-icon" viewBox="0 0 24 24">
+              <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 8c-1.65 0-3-1.35-3-3s1.35-3 3-3 3 1.35 3 3-1.35 3-3 3zm0-10c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1s-1 .45-1 1v1c0 .55.45 1 1 1zm0 14c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1s1-.45 1-1v-1c0-.55-.45-1-1-1zm8.66-10c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1s1-.45 1-1v-1c0-.55-.45-1-1-1zM5.34 6c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1s1-.45 1-1V7c0-.55-.45-1-1-1zm13.32 10.66c-.39-.39-1.02-.39-1.41 0s-.39 1.02 0 1.41l.71.71c.39.39 1.02.39 1.41 0s.39-1.02 0-1.41l-.71-.71zm-12.02-12c-.39-.39-1.02-.39-1.41 0s-.39 1.02 0 1.41l.71.71c.39.39 1.02.39 1.41 0s.39-1.02 0-1.41l-.71-.71zm12.02 12c-.39-.39-1.02-.39-1.41 0s-.39 1.02 0 1.41l.71.71c.39.39 1.02.39 1.41 0s.39-1.02 0-1.41l-.71-.71zm-12.02-12c-.39-.39-1.02-.39-1.41 0s-.39 1.02 0 1.41l.71.71c.39.39 1.02.39 1.41 0s.39-1.02 0-1.41l-.71-.71z"/>
+            </svg>
+          </button>
+          <button class="menu-toggle" aria-label="toggle menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+              <line class="line line-top" x1="4" y1="6" x2="20" y2="6"></line>
+              <line class="line line-middle" x1="4" y1="12" x2="20" y2="12"></line>
+              <line class="line line-bottom" x1="4" y1="18" x2="20" y2="18"></line>
+            </svg>
+          </button>
         </div>
       </nav>
     </header>
@@ -85,7 +99,23 @@
       <section class="container">
         <div class="grid-3">
           
-          <!-- Download Card 1: Starter Kit -->
+          <!-- Download Card 1: CSS cheat sheet -->
+          <article class="card interactive-glow reveal-on-scroll">
+            <div class="card-content">
+              <h3>Design System & CSS Cheat Sheet</h3>
+              <p>
+                A comprehensive reference sheet outlining the brand HSL variables, spacing ratios, and coding guidelines.
+              </p>
+              <ul class="tech-stack" style="margin-bottom: var(--space-md);">
+                <li>Markdown</li>
+                <li>Design Tokens</li>
+                <li>Spec Sheet</li>
+              </ul>
+              <a href="../data/cheat-sheet.md" download="Lil_Wide_Codes_CSS_Cheatsheet.md" class="btn btn-primary" style="width: 100%;">Download Markdown</a>
+            </div>
+          </article>
+
+          <!-- Download Card 2: Starter Kit -->
           <article class="card interactive-glow reveal-on-scroll">
             <div class="card-content">
               <h3>V1 Boilerplate Kit</h3>
@@ -97,39 +127,23 @@
                 <li>CSS Grid</li>
                 <li>Modular JS</li>
               </ul>
-              <a href="#" class="btn btn-primary" style="width: 100%;">Download (50KB)</a>
+              <a href="#" class="btn btn-primary" style="width: 100%; pointer-events: none; opacity: 0.6;">Kit Coming Soon</a>
             </div>
           </article>
 
-          <!-- Download Card 2: Style Guide PDF -->
+          <!-- Download Card 3: System Blueprints -->
           <article class="card interactive-glow reveal-on-scroll">
             <div class="card-content">
-              <h3>Design Tokens PDF</h3>
+              <h3>System Schema</h3>
               <p>
-                A comprehensive print-ready document outlining the Lil.Wide.Codes brand colors, typography spacing ratios, and layouts.
-              </p>
-              <ul class="tech-stack" style="margin-bottom: var(--space-md);">
-                <li>PDF</li>
-                <li>Design System</li>
-                <li>Spec Sheet</li>
-              </ul>
-              <a href="#" class="btn btn-primary" style="width: 100%;">Download (1.2MB)</a>
-            </div>
-          </article>
-
-          <!-- Download Card 3: System Timelines -->
-          <article class="card interactive-glow reveal-on-scroll">
-            <div class="card-content">
-              <h3>Architecture Schema</h3>
-              <p>
-                Architectural mapping rules, API designs, and database sequence schemas in SVG/JSON configurations.
+                Architectural mappings, API configurations, and database sequence schemas in SVG/JSON configurations.
               </p>
               <ul class="tech-stack" style="margin-bottom: var(--space-md);">
                 <li>JSON</li>
                 <li>SVG Diagrams</li>
                 <li>Db Schema</li>
               </ul>
-              <a href="#" class="btn btn-primary" style="width: 100%;">Download (220KB)</a>
+              <a href="#" class="btn btn-primary" style="width: 100%; pointer-events: none; opacity: 0.6;">Schema Coming Soon</a>
             </div>
           </article>
 
